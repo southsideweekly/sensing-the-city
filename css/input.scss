@@ -72,3 +72,38 @@ header {
 main {
 	padding-top:80px;
 }
+
+#interactive {
+	width:100%;
+	height:700px;
+	background:#666;
+	margin-bottom:40px;
+	margin-top:10px;
+}
+
+
+footer {
+	text-align:center;
+	color:#fff;
+	background:#333;
+	padding: 60px 40px;
+	.branding {
+		width:250px;
+		height:37px;
+		margin-left: auto;
+		margin-right:auto;
+		margin-bottom:20px;
+		background:url("../../img/dist/logo-ssw.png");
+		background-size:100% auto;
+		background-repeat:no-repeat;
+		opacity:.5;
+	}
+	ul {
+		list-style:none;
+		margin-bottom:20px;
+		li {
+			display:inline;
+			margin-right:20px;
+		}
+	}
+}
