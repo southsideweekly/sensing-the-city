@@ -24,7 +24,7 @@ h1 {
 	color: #333;//$ssw-red;
 	line-height:1;
 	margin-left:-7px;
-	text-shadow: 1px 1px #eee;
+	//text-shadow: 1px 1px #eee;
 	@include r($eight) {
 		font-size:74px;
 	}
@@ -121,6 +121,23 @@ main {
 	background:#666;
 	margin-bottom:40px;
 	margin-top:10px;
+}
+
+.drop {
+	float:left;
+	display:inline-block;
+	font-size:78px;
+	color:$ssw-red;
+	padding-top:45px;
+	padding-right:26px;
+	padding-left:22px;
+	padding-bottom:0;
+	line-height:.2;
+}
+
+.break {
+	color: $ssw-red;
+	text-align:center;
 }
 
 
