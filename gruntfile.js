@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 					optimizationLevel: 6,
 				//	progressive: false
 					use: [
-						mozjpeg()
+						mozjpeg({quality:50})
 					]
 				},
 				files: [{
