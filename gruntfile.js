@@ -1,8 +1,18 @@
+
+
 module.exports = function(grunt) {
+	const mozjpeg = require('imagemin-mozjpeg');
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		imagemin: {
 			dynamic: {
+				options: {
+					optimizationLevel: 6,
+				//	progressive: false
+					use: [
+						mozjpeg()
+					]
+				},
 				files: [{
 					expand: true,
 					cwd: 'img/',
