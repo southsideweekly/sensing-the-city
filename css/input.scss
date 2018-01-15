@@ -18,15 +18,16 @@ h1, h2, p {
 }
 
 h1 {
-	font-size:29px;
+	font-size:42px;
 	font-weight:700;
 	margin-bottom:5px;
 	color: #333;//$ssw-red;
 	line-height:1;
-	margin-left:-7px;
+
 	//text-shadow: 1px 1px #eee;
 	@include r($eight) {
 		font-size:56px;
+		margin-left:-7px;
 	}
 }
 
@@ -52,28 +53,35 @@ h3 {
 
 h4 {
 	font-family:"franklin-gothic-urw", "Geneva", sans-serif;
+	margin-bottom:20px;
 	font-size: 12px;
-	font-weight:normal;
 	color:#666;
 	text-transform:uppercase;
-	margin-bottom:35px;
+	font-weight:normal;
+	@include r($eight) {
+		margin-bottom:35px;
+	}
 }
 
 p {
-	margin-left: auto;
-	margin-right:auto;
-	margin-bottom:25px;
+	margin-left:0;
+	margin-right:0;
+	padding-left:15px;
+	padding-right:15px;
 	font-size:18px;
+	margin-bottom:25px;
+	@include r($six) {
+		margin-left: auto;
+		margin-right:auto;
+	}
 }
 
 header {
 	height:100vh;
-	//border-top:solid 5px #333;
-	background:#eee;
+	background-position: 90% 50%; 
+	background-size: cover;
 	position:relative;
-	background:url("../../img/dist/node.jpg");
-	background-size:cover;
-	background-position:100% 50%;
+	background-image:url("../../img/dist/node.jpg");
 	&:before {
 		position:absolute;
 		top:0;
@@ -81,7 +89,15 @@ header {
 		width:100%;
 		height:100%;
 		//background: linear-gradient(to right, rgba(255, 255, 255, .9), rgba(255, 255, 255, .2) 30%);
+		background:#fff;
+		opacity:.75;
 		content:"";
+		@include r($eight) {
+			opacity:0;
+		}
+	}
+	@include r($eight) {
+		background-position:100% 50%;
 	}
 	#ascii {
 		display:none;
@@ -97,8 +113,15 @@ header {
 	}
 	.text {
 		position:absolute;
-		bottom:90px;
-		left:40px;
+		bottom:0;
+		left:0;
+		padding-left:20px;
+		padding-right:20px;
+		padding-bottom:40px;
+		@include r($eight) {
+			padding-left:40px;
+			padding-bottom:90px;
+		}
 	}
 	.branding {
 		opacity:.5;
@@ -115,33 +138,71 @@ header {
 
 main {
 	padding-top:80px;
-	border-top:solid 3px #666;
+	border-top:solid 3px $ssw-red_dark;
 	padding-bottom:80px;
-	img.left {
-		float:left;
-		padding-right:40px;
-		padding-bottom:40px;
-		margin-left:10%;
+	.img-wrapper {
+		width: 100%;
+		padding-bottom:20px;
 	}
-	img.full {
+	img {
+		width: 100%;
+		//margin-bottom:20px;
+	}
+	small {
+	//	float:left;
+		//position:relative;
+		margin:0;
+		padding-top:0;
+		padding-right:0;
+		padding-bottom:0;
+		padding-left:5px;
+		color:#999;
+		@include r($six) {
+			padding-left:0;
+		}
+	//	&:after {
+	//		clear:both;
+	//		content:"";
+	//	}
+	}
+	.left {
+		@include r($six) {
+			float:left;
+			padding-right:40px;
+			padding-bottom:40px;
+			margin-left:10%;
+		}
+	}
+	.full {
 		width:100%;
 		margin-bottom:40px;
+		small {
+			padding-left:5px;
+		}
 	}
-	img#charlie {
-		width:400px;
+	#charlie {
+		@include r($six) {
+			width:400px;
+		}
 	}
-	img#shared_air {
-		width:600px;
-		margin-left:5%;
+	#shared_air {
+		@include r($six) {
+			width:600px;
+			margin-left:5%;
+		}
 	}
 	#interactive {
-		width:800px;
-		height:500px;
-		background:#666;
-		margin-bottom:40px;
-		margin-top:10px;
-		margin-left:auto;
-		margin-right:auto;
+		display:none;
+		@include r($eight) {
+			display:block;
+			width:800px;
+			height:500px;
+			background:#666;
+			margin-bottom:40px;
+			margin-top:10px;
+			margin-left:auto;
+			margin-right:auto;
+		}
 	}
 	.drop {
 		float:left;
@@ -159,24 +220,39 @@ main {
 		text-align:center;
 	}
 	.blockquote {
-		width:300px;
-		margin-right:10%;
-		float:right;
-		position:relative;
-		padding-left:40px;
-		padding-bottom:40px;
-		padding-top:40px;
+		width: calc(100% - 30px);
+		border-top: solid 1px #eee;
+		border-bottom: solid 1px #eee;
+		padding-top:30px;
+		padding-bottom:30px;
+		margin-bottom:30px;
+		margin-top:30px;
+		margin-right:15px;
+		margin-left:15px;
 		font-family: "adobe-caslon-pro", "adobe-caslon-pro", "Georgia", serif;
 		font-size:64px;
 		font-weight:bold;
+		text-align:center;
+		@include r($six) {
+			width:300px;
+			border-top:none;
+			border-bottom:none;
+			margin-right:10%;
+			float:right;
+			position:relative;
+			padding-left:40px;
+			padding-bottom:40px;
+			padding-top:40px;	
+		}
 		small {
 			font-family:"franklin-gothic-urw", "Geneva", sans-serif;
 			font-size:16px;
-			text-align:right;
+			text-align:center;
+			padding-left:60px;
 			display:block;
 		}
 	}
-	small {
+	small.note {
 		display:block;
 		max-width:600px;
 		margin: 0 auto;
@@ -186,6 +262,8 @@ main {
 		color:#888;
 		line-height:1.25;
 		margin-top:20px;
+		padding-left:15px;
+		padding-right:15px;
 	}
 }
 
