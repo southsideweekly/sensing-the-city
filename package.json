@@ -1,10 +1,11 @@
 {
-  "name": "city_programmed",
+  "name": "the-city-programmed",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-imagemin": "^2.0.1",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-watch": "^1.0.0",
+    "imagemin-mozjpeg": "^7.0.0"
   }
 }
