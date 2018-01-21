@@ -9,6 +9,61 @@ html, body {
 	margin:0;
 }
 
+article {
+	perspective: 1px;
+	transform-style: preserve-3d;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.parallax {
+	display: flex;
+	flex: 1 0 auto;
+	position: relative;
+	height: 750px; /* Fallback for older browsers */
+	height: 100vh;
+	transform: translateZ(-1px) scale(2);
+	z-index: -1;
+	background-position: 90% 50%; 
+	background-size: cover;
+}
+
+.content {
+	display: block;
+	position: relative;
+	background-color: white;
+	z-index: 1;
+}
+
+.full-image {
+	background-image:url("../../img/dist/lab.jpg");
+	background-position: 50% 50%;
+
+	small {
+		position: absolute;
+		bottom: 5%;
+		left: 0;
+		padding: 8px;
+		background-color: rgba(255,255,255,0.7);
+	}
+}
+
+@media(max-width: 800px) {
+	article {
+		overflow: auto;
+		height: inherit;
+	}
+	.parallax {
+		transform: none;
+	}
+	.full-image {
+		small {
+			bottom: 0;
+		}
+	}
+}
+
 h1, h2, p {
 	font-family:"adobe-caslon-pro", "adobe-caslon-pro", "Georgia", serif;
 	width: 100%;
@@ -77,10 +132,6 @@ p {
 }
 
 header {
-	height:100vh;
-	background-position: 90% 50%; 
-	background-size: cover;
-	position:relative;
 	background-image:url("../../img/dist/node.jpg");
 	&:before {
 		position:absolute;
@@ -136,9 +187,16 @@ header {
 	}
 }
 
-main {
-	padding-top:80px;
+main:first-of-type {
 	border-top:solid 3px $ssw-red_dark;
+}
+
+main {
+	display: block;
+	position: relative;
+	background-color: white;
+	z-index: 1;
+	padding-top:80px;
 	padding-bottom:80px;
 	.img-wrapper {
 		width: 100%;
@@ -295,7 +353,7 @@ main {
 		padding-left: 40px;
 
 		small {
-			padding-left: 20px;
+			padding-left: 40px;
 			text-align: left;
 		}
 
@@ -323,7 +381,7 @@ footer {
 		list-style:none;
 		margin-bottom:20px;
 		li {
-			display:inline;
+			display:inline-block;
 			margin-right:20px;
 
 			a:hover {
