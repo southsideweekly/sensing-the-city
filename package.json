@@ -1,5 +1,5 @@
 {
-  "name": "the-city-programmed",
+  "name": "sensing-the-city",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "^1.0.1",
