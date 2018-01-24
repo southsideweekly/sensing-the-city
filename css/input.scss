@@ -274,6 +274,10 @@ main {
 			height: 100vh;
 			width: auto;
 		}
+		small {
+			display: block;
+			padding-top: 8px;
+		}
 	}
 	.drop {
 		float:left;
